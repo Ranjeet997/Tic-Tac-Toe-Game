@@ -5,8 +5,10 @@ export default function Main() {
   const [isGameOver, setIsGameOver] = useState(false);
   const [imgWidth, setImgWidth] = useState(0);
   const [elementList, setElementList] = useState();
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const resetGame = () => {
+    setIsDisabled(false);
     setValue(Value);
     setIsGameOver(false);
     setImgWidth(0);
@@ -58,6 +60,7 @@ export default function Main() {
         boxtext[e[1]].value === boxtext[e[2]].value &&
         boxtext[e[0]].value !== ""
       ) {
+        setIsDisabled(true);
         setIsGameOver(!isGameOver);
         setImgWidth(23);
         setBoxShadowToWin(e[0], e[1], e[2]);
@@ -87,6 +90,8 @@ export default function Main() {
                   name="value"
                   className="box text-center textBox my-input"
                   onClick={handleOnClick}
+                  readonly="readonly"
+                  disabled={isDisabled}
                 />
               </div>
               <div
@@ -97,6 +102,8 @@ export default function Main() {
                   type="text"
                   className="box text-center textBox my-input"
                   onClick={handleOnClick}
+                  readonly="readonly"
+                  disabled={isDisabled}
                 />
               </div>
               <div id="2" className="col-4 boxShadow">
@@ -104,6 +111,8 @@ export default function Main() {
                   type="text"
                   className="box text-center textBox my-input"
                   onClick={handleOnClick}
+                  readonly="readonly"
+                  disabled={isDisabled}
                 ></input>
               </div>
               <div
@@ -115,6 +124,8 @@ export default function Main() {
                     type="text"
                     className="box text-center textBox my-input"
                     onClick={handleOnClick}
+                    readonly="readonly"
+                    disabled={isDisabled}
                   />
                 </div>
               </div>
@@ -124,7 +135,9 @@ export default function Main() {
                     type="text"
                     className="box text-center textBox my-input"
                     onClick={handleOnClick}
-                  ></input>
+                    readonly="readonly"
+                    disabled={isDisabled}
+                  />
                 </div>
               </div>
               <div
@@ -136,7 +149,9 @@ export default function Main() {
                     type="text"
                     className="box text-center textBox my-input"
                     onClick={handleOnClick}
-                  ></input>
+                    readonly="readonly"
+                    disabled={isDisabled}
+                  />
                 </div>
               </div>
               <div id="6" className="col-4 boxShadow">
@@ -145,7 +160,9 @@ export default function Main() {
                     type="text"
                     className="box text-center textBox my-input"
                     onClick={handleOnClick}
-                  ></input>
+                    readonly="readonly"
+                    disabled={isDisabled}
+                  />
                 </div>
               </div>
               <div
@@ -157,7 +174,9 @@ export default function Main() {
                     type="text"
                     className="box text-center textBox my-input"
                     onClick={handleOnClick}
-                  ></input>
+                    readonly="readonly"
+                    disabled={isDisabled}
+                  />
                 </div>
               </div>
               <div id="8" className="col-4 boxShadow">
@@ -166,7 +185,9 @@ export default function Main() {
                     type="text"
                     className="box text-center textBox my-input"
                     onClick={handleOnClick}
-                  ></input>
+                    readonly="readonly"
+                    disabled={isDisabled}
+                  />
                 </div>
               </div>
             </div>
